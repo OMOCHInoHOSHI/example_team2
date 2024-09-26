@@ -23,7 +23,7 @@
         android:id="@+id/textView_n_a"
         android:layout_width="69dp"
         android:layout_height="24dp"
-        android:text="T_K"
+        android:text="N_A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.643"
