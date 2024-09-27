@@ -2,6 +2,7 @@ package com.example.example
 
 import android.os.Bundle
 import android.view.Menu
+import android.widget.TextView
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -38,12 +39,10 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         // Pythonにより追加
         val py = Python.getInstance()
-        val module = py.getModule("hello")
-        val txt1 = module.callAttr("hello_world")
-        val txt2 = module.callAttr("set_text", "Good Mornig")
-        println(txt1)
-        println(txt2)
-
+        val module = py.getModule("jikken").callAttr("hello_world")
+        // TextViewにPythonからのメッセージを表示する
+        val textView: TextView = findViewById(R.id.textView)
+        textView.text = module.toString()
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
